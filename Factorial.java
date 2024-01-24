@@ -1,8 +1,16 @@
 import java.util.Scanner;
 public class Factorial {
     static int fact(int n){
+        // method 1 Time Complexity O(n)
+        // if (n == 0) return 1;
+        // return n * fact(n-1);
+        // method 2 TC O(1)
+        int res = 1;
         if (n == 0) return 1;
-        return n * fact(n-1);
+        for (int i=2 ;i<=n ;i++) {
+            res = res*i;
+        }
+        return res;
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
