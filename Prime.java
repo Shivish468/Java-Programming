@@ -19,7 +19,7 @@ public class Prime {
 //         sc.close();
 //     }
 // for long n with optimized method
-    static boolean isPrime(int n) {
+    static boolean isPrime(long n) {
         if (n <= 1) return false;
         if (n==2 || n==3) return true;
         if (n%2 == 0 || n%3 == 0) {
@@ -36,7 +36,7 @@ public class Prime {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number (-1 to quit): ");
         while (true) {
-            int n = sc.nextInt();
+            long n = sc.nextLong();
             if (n == -1) break;
             System.out.println((isPrime(n)) ? "Yes, It's a prime number" : "Not a prime number! Enter again: ");
         }
