@@ -1,12 +1,30 @@
 import java.util.Scanner;
 
 public class Power {
-    static int power(int x, int n) {
-        int res = 1;
-        for(int i=0; i<n; i++) {
-            res *= x;
+    // method 1
+    // static int power(int x, int n) {
+    //     int res = 1;
+    //     for(int i=0; i<n; i++) {
+    //         res *= x;
+    //     }
+    //     return res;
+    // }
+
+    // method 2
+    static int power(int x, int n){
+        if (n == 0) {
+            return 1;
         }
-        return res;
+        else{
+            int temp = power(x, n/2);
+            temp = temp*temp;
+            if(n % 2 == 0) {
+                return temp;
+            }
+            else {
+                return temp*x;
+            }
+        }
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
