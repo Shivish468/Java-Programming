@@ -11,20 +11,34 @@ public class Power {
     // }
 
     // method 2
-    static int power(int x, int n){
-        if (n == 0) {
-            return 1;
-        }
-        else{
-            int temp = power(x, n/2);
-            temp = temp*temp;
-            if(n % 2 == 0) {
-                return temp;
+    // static int power(int x, int n){
+    //     if (n == 0) {
+    //         return 1;
+    //     }
+    //     else{
+    //         int temp = power(x, n/2);
+    //         temp = temp*temp;
+    //         if(n % 2 == 0) {
+    //             return temp;
+    //         }
+    //         else {
+    //             return temp*x;
+    //         }
+    //     }
+    // }
+
+    // method 3
+    static int power(int x, int n) {
+        int result = 1;
+        while (n > 0) {
+            if(n % 2 != 0) {
+                result = result * x;
+            } else {
+                x = x*x;
             }
-            else {
-                return temp*x;
-            }
+            n = n/2;
         }
+        return result;
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
